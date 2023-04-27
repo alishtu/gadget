@@ -1,0 +1,70 @@
+{% load static %}
+{% load cache %}
+<html>
+<head>
+	<title>{{title}}</title>
+ <link type="text/css" href="{% static 'shopee/css/styles.css' %}" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--	<link rel="stylesheet" href="{% static 'mobilephone/css/stylese.css' %}">-->
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+{% block mainmenu %}
+		<div class="header">
+			<ul id="mainmenu" class="mainmenu">
+			<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
+
+{% for m in menu %}
+			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+{% endfor %}
+				{% if request.user.is_authenticated %}
+				<li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+{% else %}
+				<a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a>
+				{% endif %}
+			</ul>
+			<hr>
+		</div>
+{% endblock mainmenu %}
+
+
+
+	{% block content %}
+	{% endblock %}
+	{% if page_obj.has_other_pages %}
+	<nav class="list-pages">
+    <ul>
+
+		{% if page_obj.has_previous %}
+<li class="page-num">
+         <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+</li>
+{% endif %}
+
+        {% for p in paginator.page_range %}
+		{% if page_obj.number == p %}
+        <li class="page-num page-num-selected">{{ p }}</li>
+		{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+        <li class="page-num">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+                   {% endif %}
+        {% endfor %}
+
+		{% if page_obj.has_next %}
+<li class="page-num">
+         <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+</li>
+{% endif %}
+
+    </ul>
+</nav>
+	{% endif %}
+</body>
+</html>
+
+
+
+
+

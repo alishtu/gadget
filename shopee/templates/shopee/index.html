@@ -1,0 +1,41 @@
+{% extends 'shopee/base.html' %}
+
+{% block content %}
+<h1 class="h"> Смартфоны</h1>
+<ul class="list-articles">
+	{% for p in posts %}
+	<div class="div">
+		{% if p.photo %}
+         <p><img class="img" src="{{p.photo.url}}"></p>
+{% endif %}
+		<div class="post-text">
+			<p class="model" style="margin: 0; padding: 0">{{p.title}}</p>
+			<p class="post-title" style="margin: 0; padding: 0">{{p.price}}</p>
+			<p class="link-read-post" style="margin: 0; padding: 0">
+				<a href="{{ p.get_absolute_url }}">read post</a>
+			</p>
+		</div>
+	</div>
+	{% endfor %}
+</ul>
+<h1 class="h"> Notebook</h1>
+<ul class="list-articles">
+	{% for p in posts %}
+	<div class="div">
+		{% if p.photo %}
+         <p><img class="img" src="{{p.photo.url}}"></p>
+{% endif %}
+		<div class="post-text">
+			<p class="model" style="margin: 0; padding: 0">{{p.title}}</p>
+			<p class="post-title" style="margin: 0; padding: 0">{{p.price}}</p>
+			<p class="link-read-post" style="margin: 0; padding: 0">
+				<a href="{{ p.get_absolute_url }}">read post</a>
+			</p>
+		</div>
+	</div>
+	{% endfor %}
+</ul>
+
+{% endblock %}
+
+

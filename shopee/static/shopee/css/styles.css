@@ -1,0 +1,120 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-style: "TT Norms Pro"
+}
+
+
+.header
+{
+    padding-top: 8px;
+    width: 1280px;
+    height : 60px;
+}
+
+.mainmenu{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0 0 12px 0;
+    margin: 0;
+    width : 1150px;
+}
+
+ul{
+    list-style-type : none;
+}
+a{
+  text-decoration: none;
+  color: #232D51;
+  font-size: 18px;
+  font-style: "TT Norms Pro"
+}
+
+.logo{
+    padding-right: 200px;
+}
+
+.div{
+    color: black;
+    width : 300px;
+    padding: 8px;
+    height: 400px;
+    margin-right: 100px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.div:hover{
+box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.list-articles{
+    display: flex;
+    flex-direction: row;
+}
+.h{
+    padding-left: 50px;
+}
+.img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.logo {
+	background: url('../images/logoo.png') no-repeat ;
+	width: 70px;
+	height: 40px;
+}
+.link-read-post{
+    margin:10px;
+    font-family: serif;
+    font-size: 20px;
+}
+img.img-article-left {
+	max-width: 300px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 1px solid #d0d0d0;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0;
+}
+.list-pages .page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 20px;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none;
+}
+
+
+
